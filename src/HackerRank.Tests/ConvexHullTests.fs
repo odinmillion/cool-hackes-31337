@@ -18,6 +18,12 @@ type ConvexHullTests() =
         let problem = { Vectors=[{X=3;Y=2}; {X=2;Y=5}; {X=4;Y=5}] }
         let solution = solve problem
         solution.Should().BeApproximately(8.3, 0.2, "", []) |> ignore
+
+    [<Test>]
+    member this.SolveProblem3() =
+        let problem = { Vectors=[{X=0;Y=0}; {X=10;Y=10}; {X=0;Y=10}] }
+        let solution = solve problem
+        solution.Should().BeApproximately(34.14, 0.2, "", []) |> ignore
     
     [<Test>]
     member this.CalcDistance1() = 
